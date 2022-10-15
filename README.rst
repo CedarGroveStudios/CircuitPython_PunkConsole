@@ -87,7 +87,7 @@ Documentation
 =============
 API documentation for this library can be found in `PunkConsole_API <https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/pseudo_readthedocs_punkconsole.pdf>`_.
 
-.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/docs/Stereo_Punk_Console_test.png
+.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/Stereo_Punk_Console_test.png
 
 The CedarGrove PunkConsole emulates an astable square-wave oscillator and
 synchronized non-retriggerable one-shot monostable multivibrator to create
@@ -117,55 +117,55 @@ two analog input pins. The sequencer is controlled by an internal list of
 notes that select the oscillator frequency; pulse width is potentiometer
 controlled.
 
-  Minimum and maximum input ranges (may be further limited by the MPU):
-  pulse_width: 0.05ms to  5000ms
-  frequency:      1Hz to >4MHz
+- Minimum and maximum input ranges (may be further limited by the MPU):
+    - pulse_width: 0.05ms to  5000ms
+    - frequency:      1Hz to >4MHz
 
-  Practical input ranges for audio (empirically determined):
-  pulse_width:  0.5ms to 5ms
-  frequency:      3Hz to 3kHz
+- Practical input ranges for audio (empirically determined):
+    - pulse_width:  0.5ms to 5ms
+    - frequency:      3Hz to 3kHz
 
 The CedarGrove Punk Console algorithm uses PWM frequency and duty cycle
 parameters to build the output waveform. The PWM output frequency is an
 integer multiple of the oscillator frequency input compared to the one-shot
 pulse width input:
 
-    `pwm_freq = freq_in / (int((pulse_width) * freq_in) + 1)`
+``pwm_freq = freq_in / (int((pulse_width) * freq_in) + 1)``
 
 The PWM output duty cycle is calculated after the PWM output frequency is
 determined. The PWM output duty cycle is the ratio of the one-shot pulse
 width and the wavelength of the PWM output frequency:
 
-    `pwm_duty_cycle = pulse_width * pwm_freq`
+``pwm_duty_cycle = pulse_width * pwm_freq``
 
-Notes:
+
 Planned updates:
 
-For non-PWM analog output, use `audiocore` with a waveform sample in the
-`RawSample` binary array, similar to the `simpleio.tone()` helper. The output
+For non-PWM analog output, use ``audiocore`` with a waveform sample in the
+``RawSample`` binary array, similar to the ``simpleio.tone()`` helper. The output
 waveform's duty cycle will be adjusted by altering the contents of the array,
 perhaps with `ulab` to improve code execution time. The
-`audiocore.RawSample.sample_rate` frequency is expected to be directly
+``audiocore.RawSample.sample_rate`` frequency is expected to be directly
 proportional to the original algorithm's PWM frequency output value, calculated
-from the `sample_rate` divided by the length of the `audiocore.RawSample` array
+from the ``sample_rate`` divided by the length of the ``audiocore.RawSample`` array
 (number of samples).
 
 MIDI control: A version that uses USB and/or UART MIDI is in the queue. Note
-that the `PunkConsole.mute` property could be used for note-on and note-off.
-`note_in_example.py` shows how muting can be used for individual notes.
+that the ``PunkConsole.mute`` property could be used for note-on and note-off.
+``note_in_example.py`` shows how muting can be used for individual notes.
 
 CV control: A Eurorack version was discussed, it's just a bit lower on the
 to-do list, that's all. But you know, the first two examples use analog inputs
 (0 to +3.3 volts) for frequency and pulse width control. Just sayin'.
 
 
-.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/docs/CG_PunkConsole_04.jpeg
+.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/CG_PunkConsole_04.jpeg
 
-.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/docs/CG_PunkConsole_01.jpeg
+.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/CG_PunkConsole_01.jpeg
 
-.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/docs/CG_PunkConsole_02.jpeg
+.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/CG_PunkConsole_02.jpeg
 
-.. image:: (https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/docs/CG_PunkConsole_03.jpeg
+.. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/CG_PunkConsole_03.jpeg
 
 
 For information on building library documentation, please check out
