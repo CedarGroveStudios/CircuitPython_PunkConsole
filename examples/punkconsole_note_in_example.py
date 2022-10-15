@@ -11,22 +11,22 @@
 import time
 import board
 import analogio
-import pwmio
 from simpleio import map_range
+
 # Note converters: https://github.com/CedarGroveStudios/Unit_Converter
 from cedargrove_unit_converter.music_MIDI import note_or_name, note_to_frequency
 from cedargrove_punk_console import PunkConsole
 
 # note name, beats
 notes = [
-    ('C5', 0.25),
-    ('E5', 0.25),
-    ('G5', 0.25),
-    ('C6', 0.25),
-    ('B5', 0.25),
-    ('G5', 0.25),
-    ('F5', 0.25),
-    ('D5', 0.25),
+    ("C5", 0.25),
+    ("E5", 0.25),
+    ("G5", 0.25),
+    ("C6", 0.25),
+    ("B5", 0.25),
+    ("G5", 0.25),
+    ("F5", 0.25),
+    ("D5", 0.25),
 ]
 
 tempo = 120  # beats-per-minute

@@ -12,7 +12,6 @@
 
 import board
 import analogio
-import pwmio
 from simpleio import map_range
 from cedargrove_punkconsole import PunkConsole
 
