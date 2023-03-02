@@ -85,7 +85,7 @@ Usage Example
 
 Documentation
 =============
-API documentation for this library can be found in `PunkConsole_API < https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/pseudo_readthedocs_cedargrove_punkconsole.pdf >`_.
+API documentation for this library can be found in `PunkConsole_API <https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/pseudo_readthedocs_cedargrove_punkconsole.pdf>`_.
 
 
 .. image:: https://github.com/CedarGroveStudios/CircuitPython_PunkConsole/blob/main/media/Stereo_Punk_Console_test.png
